@@ -6,3 +6,6 @@ test:
 lint:
 	@yamllint .
 	@ansible-lint .
+
+clean:
+	@rm tests/*.deleteme
