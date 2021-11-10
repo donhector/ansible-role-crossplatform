@@ -1,6 +1,6 @@
 .PHONY: test lint
 
-test:
+test: clean
 	@ansible-playbook tests/test.yml -i tests/inventory
 
 lint:
@@ -8,4 +8,4 @@ lint:
 	@ansible-lint .
 
 clean:
-	@rm tests/*.deleteme
+	@rm -f tests/*.deleteme
