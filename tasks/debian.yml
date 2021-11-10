@@ -1,0 +1,5 @@
+---
+- name: '[debian] Execute echo command and regsiter the output'
+  command: echo {{ crossplatform_message }}
+  register: result
+  changed_when: false

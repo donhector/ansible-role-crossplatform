@@ -1,0 +1,6 @@
+---
+
+- name: Test the role
+  hosts: localhost
+  roles:
+    - ansible-role-crossplatform

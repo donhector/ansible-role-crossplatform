@@ -1,0 +1,33 @@
+---
+galaxy_info:
+  role_name: crossplatform
+  author: donhector
+  description: This role illustrates a crossplatform role skeleton
+
+  license: MIT
+
+  min_ansible_version: 2.11
+
+  github_branch: main
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Centos
+      versions:
+        - all
+    - name: Windows
+      versions:
+        - all
+
+  galaxy_tags:
+    - debian
+    - ubuntu
+    - centos
+    - windows
+
+dependencies: []
