@@ -8,9 +8,9 @@
 - name: '[main] Include {{ ansible_os_family }} OS family specific variables'
   include_vars: '{{ ansible_os_family | lower }}.yml'
 
-- name: '[main] Example of common task that runs for all platforms'
+- name: '[main] Example of task that runs regardless of OS family and distro'
   debug:
-    msg: 'This is an example task that always runs regardless of OS family and distribution'
+    msg: 'I run regardless of OS family and distro'
 
 - name: '[main] Include {{ ansible_os_family }} OS family specific tasks file'
   include_tasks: '{{ ansible_os_family | lower }}.yml'
