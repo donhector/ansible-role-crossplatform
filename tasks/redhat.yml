@@ -1,5 +1,5 @@
 ---
-- name: '[redhat] Print crossplatform_message variable'
+- name: '[redhat] Execute echo command and register the output'
   command: echo {{ crossplatform_message }}
   register: result
   changed_when: false

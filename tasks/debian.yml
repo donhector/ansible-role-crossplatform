@@ -1,5 +1,15 @@
 ---
-- name: '[debian] Execute echo command and regsiter the output'
+- name: '[debian] Execute echo command and register the output'
   command: echo {{ crossplatform_message }}
   register: result
   changed_when: false
+
+- name: '[debian] Touch ubuntu.deleteme file (Ubuntu distro only)'
+  command: touch ubuntu.deleteme
+  changed_when: false
+  when: ansible_distribution == "Ubuntu"
+
+- name: '[debian] Touch debian.deleteme file (Debian distro only)'
+  command: touch debian.deleteme
+  changed_when: false
+  when: ansible_distribution == "Debian"
