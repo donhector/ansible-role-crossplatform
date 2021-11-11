@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-## Ask us a question
+### Ask us a question
 
 Your question goes here
