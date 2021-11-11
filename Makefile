@@ -1,4 +1,4 @@
-.PHONY: test lint
+.PHONY: test lint clean
 
 test: clean
 	@ansible-playbook tests/test.yml -i tests/inventory
