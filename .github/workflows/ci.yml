@@ -1,10 +1,11 @@
 ---
-name: CI Tests
+name: Continuos Integration
 
 on:
   pull_request:
     branches:
      - main
+     - master
   workflow_dispatch:
 
 jobs:
@@ -47,7 +48,8 @@ jobs:
         id: cache-pipenv
         uses: actions/cache@v2.1.6
         with:
-          path: ~/.local/share/virtualenvs
+          #path: ~/.local/share/virtualenvs
+          path: .venv
           key: ${{ runner.os }}-pipenv-${{ hashFiles('Pipfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pipenv-
@@ -57,7 +59,7 @@ jobs:
         run: |
           pipenv install --deploy --dev
 
-      - name: Molecule
+      - name: Molecule test [${{ matrix.distros }}]
         run: make test
         env:
           MOLECULE_DISTRO: "${{ matrix.distros }}"

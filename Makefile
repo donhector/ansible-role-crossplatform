@@ -14,6 +14,7 @@ install:
 	@pipenv install --dev
 	@[ -f .git/hooks/pre-commit ] || pipenv run pre-commit install
 
+## remove our pipenv environment
 clean:
 	$(call hr)
 	@pipenv --rm
@@ -28,13 +29,20 @@ test:
 	$(call hr)
 	@pipenv run molecule test --all
 
+## Update pipenv dependencies along with pre-commit
 update:
 	$(call hr)
 	@pipenv update --dev
 	@pipenv run pre-commit autoupdate
 
+## Test for known vulnerabilities in our pipenv environment
 security:
 	$(call hr)
 	@pipenv check
 
-.PHONY: all install lint test update clean security
+## Run just the role
+run:
+	$(call hr)
+	@pipenv run molecule converge
+
+.PHONY: all install lint test update clean security run
