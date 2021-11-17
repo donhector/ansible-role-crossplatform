@@ -18,10 +18,12 @@ clean:
 	$(call hr)
 	@pipenv --rm
 
+## only run the linter, no testing
 lint:
 	$(call hr)
 	@pipenv run molecule lint
 
+## molecule test already does linting
 test:
 	$(call hr)
 	@pipenv run molecule test --all
