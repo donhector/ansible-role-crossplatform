@@ -1,0 +1,13 @@
+---
+# This is a dummy example of a molecule validator
+
+- name: Verify
+  hosts: all
+  #gather_facts: false
+  vars:
+    expected_value: 'dummy'
+  tasks:
+  - name: Assertions
+    assert:
+      that:
+        - "expected_value in 'dummy'"

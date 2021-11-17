@@ -5,11 +5,17 @@
   changed_when: false
 
 - name: '[debian] Touch ubuntu.deleteme file (Ubuntu distro only)'
-  command: touch ubuntu.deleteme
+  file:
+    path: /tmp/{{ ansible_distribution | lower }}.deleteme
+    state: touch
+    mode: 0644
   changed_when: false
   when: ansible_distribution == "Ubuntu"
 
 - name: '[debian] Touch debian.deleteme file (Debian distro only)'
-  command: touch debian.deleteme
+  file:
+    path: /tmp/{{ ansible_distribution | lower }}.deleteme
+    state: touch
+    mode: 0644
   changed_when: false
   when: ansible_distribution == "Debian"

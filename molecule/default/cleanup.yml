@@ -1,0 +1,9 @@
+---
+- name: Cleanup
+  hosts: all
+  gather_facts: true
+  tasks:
+  - name: Clean '.deleteme' files
+    file:
+      path: /tmp/{{ ansible_distribution | lower }}.deleteme
+      state: absent

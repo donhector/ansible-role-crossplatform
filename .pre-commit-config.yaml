@@ -1,0 +1,44 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-yaml
+        # https://github.com/pre-commit/pre-commit-hooks/issues/273
+        # Not the best option but it doesn't seem to accept an 'ignore' option
+        args: [--unsafe]
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-executables-have-shebangs
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+      - id: sort-simple-yaml
+      - id: detect-private-key
+      - id: detect-aws-credentials
+        args: ['--allow-missing-credentials']
+      - id: no-commit-to-branch
+        args: ['--branch', 'master', '--branch', 'main']
+
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 2.1.5
+    hooks:
+      - id: shellcheck
+
+  - repo: local
+    hooks:
+      - id: lint
+        name: Lint
+        entry: make
+        args: ['lint']
+        pass_filenames: false
+        language: system
+
+  - repo: local
+    hooks:
+      - id: test
+        name: Test
+        entry: make
+        args: ['test']
+        pass_filenames: false
+        language: system
