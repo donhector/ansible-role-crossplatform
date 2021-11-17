@@ -12,6 +12,8 @@ jobs:
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
+    env:
+      PIPENV_VENV_IN_PROJECT: true
     strategy:
       matrix:
         distros:
