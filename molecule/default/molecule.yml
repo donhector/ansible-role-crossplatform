@@ -4,8 +4,9 @@ dependency:
 driver:
   name: docker
 lint: |
-  yamllint .
-  ansible-lint
+    set -e
+    yamllint .
+    ansible-lint
 platforms:
   - name: instance
     image: ${MOLECULE_DISTRO:-ghcr.io/artis3n/docker-ubuntu2104-ansible:latest}
@@ -22,8 +23,9 @@ provisioner:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 verifier:
   name: ansible
+  enabled: true
 
-# Custom scenario where we remove 'dependency, prepare and side_effect' stage
+# Custom scenario where we run only the relevant stages for our role
 scenario:
   name: default
   test_sequence:

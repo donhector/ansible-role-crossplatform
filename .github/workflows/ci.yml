@@ -1,16 +1,19 @@
 ---
-name: CI Tests
+name: Continuos Integration
 
 on:
   pull_request:
     branches:
      - main
+     - master
   workflow_dispatch:
 
 jobs:
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
+    env:
+      PIPENV_VENV_IN_PROJECT: true
     strategy:
       matrix:
         distros:
@@ -27,7 +30,7 @@ jobs:
           - geerlingguy/docker-debian10-ansible:latest
           - geerlingguy/docker-debian9-ansible:latest
           - geerlingguy/docker-fedora31-ansible:latest
-          - ghcr.io/artis3n/docker-arch-ansible:latest
+          # - ghcr.io/artis3n/docker-arch-ansible:latest
       fail-fast: false
     steps:
       - name: Checkout the codebase
@@ -47,7 +50,8 @@ jobs:
         id: cache-pipenv
         uses: actions/cache@v2.1.6
         with:
-          path: ~/.local/share/virtualenvs
+          #path: ~/.local/share/virtualenvs
+          path: .venv
           key: ${{ runner.os }}-pipenv-${{ hashFiles('Pipfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pipenv-
@@ -57,7 +61,7 @@ jobs:
         run: |
           pipenv install --deploy --dev
 
-      - name: Molecule
+      - name: Molecule test [${{ matrix.distros }}]
         run: make test
         env:
           MOLECULE_DISTRO: "${{ matrix.distros }}"

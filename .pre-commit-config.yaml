@@ -13,7 +13,6 @@ repos:
       - id: check-added-large-files
       - id: check-merge-conflict
       - id: mixed-line-ending
-      - id: sort-simple-yaml
       - id: detect-private-key
       - id: detect-aws-credentials
         args: ['--allow-missing-credentials']
@@ -24,15 +23,6 @@ repos:
     rev: 2.1.5
     hooks:
       - id: shellcheck
-
-  - repo: local
-    hooks:
-      - id: lint
-        name: Lint
-        entry: make
-        args: ['lint']
-        pass_filenames: false
-        language: system
 
   - repo: local
     hooks:
