@@ -67,16 +67,3 @@ jobs:
           MOLECULE_DISTRO: "${{ matrix.distros }}"
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
-
-      - name: Slack notification
-        if: always()  # failure()
-        uses: 8398a7/action-slack@v3
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          MATRIX_CONTEXT: ${{ toJson(matrix) }} # required
-        with:
-          status: ${{ job.status }}
-          job_name: ${{ matrix.distros }}
-          fields: all  # repo,commit,action,eventName,ref,workflow
-          mention: "channel"
-          if_mention: "failure"
