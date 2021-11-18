@@ -1,5 +1,5 @@
 ---
-name: Release new version
+name: Release
 
 on:
   push:
@@ -43,4 +43,3 @@ jobs:
           body: ''
           draft: false
           prerelease: false
-

@@ -1,5 +1,5 @@
 ---
-name: Continuos Integration
+name: CI
 
 on:
   pull_request:
@@ -67,4 +67,3 @@ jobs:
           MOLECULE_DISTRO: "${{ matrix.distros }}"
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
-
