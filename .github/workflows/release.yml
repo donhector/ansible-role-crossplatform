@@ -1,5 +1,5 @@
 ---
-name: Release new version
+name: Release
 
 on:
   push:
@@ -51,6 +51,6 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           status: ${{ job.status }}
-          fields: repo,commit,action,eventName,ref,workflow  # all
+          fields: all  # repo,commit,action,eventName,ref,workflow
           mention: "channel"
           if_mention: "failure"
