@@ -1,5 +1,5 @@
 ---
-name: Continuos Integration
+name: CI
 
 on:
   pull_request:
@@ -73,8 +73,10 @@ jobs:
         uses: 8398a7/action-slack@v3
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          MATRIX_CONTEXT: ${{ toJson(matrix) }} # required
         with:
           status: ${{ job.status }}
-          fields: repo,commit,action,eventName,ref,workflow  # all
+          job_name: ${{ matrix.distros }}
+          fields: all  # repo,commit,action,eventName,ref,workflow
           mention: "channel"
           if_mention: "failure"
