@@ -43,3 +43,14 @@ jobs:
           body: ''
           draft: false
           prerelease: false
+
+      - name: Slack notification
+        if: always()  # failure()
+        uses: 8398a7/action-slack@v3
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          status: ${{ job.status }}
+          fields: repo,commit,action,eventName,ref,workflow  # all
+          mention: "channel"
+          if_mention: "failure"
