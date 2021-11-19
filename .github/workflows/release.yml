@@ -27,19 +27,19 @@ jobs:
       - name: Show Ansible version
         run: ansible --version
 
-      - name: Create new Ansible Galaxy release
+      - name: Release to Ansible Galaxy
         run: >-
           ansible-galaxy role import
           --api-key ${{ secrets.GALAXY_API_KEY }}
           ${GITHUB_REPOSITORY%%/*} ${GITHUB_REPOSITORY#*/}
 
-      - name: Create new Github release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release to Gihub
+        uses: softprops/action-gh-release@v1
         with:
+          name: ${{ github.ref }}
           tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body: ''
           draft: false
           prerelease: false
+          body_path: CHANGELOG.md
+          body: ''
+          token: ${{ secrets.GITHUB_TOKEN }}
