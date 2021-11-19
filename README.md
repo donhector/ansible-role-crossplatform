@@ -1,8 +1,11 @@
 Ansible role: crossplatform
 =========
 
+[![Ansible Galaxy role badge][galaxy-role-badge]][galaxy-link]
+[![Ansible Galaxy quality badge][galaxy-quality-badge]][galaxy-link]
+[![CI badge][ci-badge]][ci-link]
+![Python version][python-badge]
 [![MIT licensed][mit-badge]][mit-link]
-[![Continuos Integration](https://github.com/donhector/ansible-role-crossplatform/actions/workflows/ci.yml/badge.svg)](https://github.com/donhector/ansible-role-crossplatform/actions/workflows/ci.yml)
 
 Description
 ------------
@@ -77,3 +80,9 @@ donhector
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew-kun/ansible-mpd/master/LICENSE
+[galaxy-role-badge]: https://img.shields.io/ansible/role/56942?color=purple&label=galaxy&logo=ansible
+[galaxy-quality-badge]: https://img.shields.io/ansible/quality/56942
+[galaxy-link]: https://galaxy.ansible.com/donhector/crossplatform
+[ci-badge]: https://github.com/donhector/ansible-role-crossplatform/actions/workflows/ci.yml/badge.svg
+[ci-link]: https://github.com/donhector/ansible-role-crossplatform/actions/workflows/ci.yml
+[python-badge]: https://img.shields.io/github/pipenv/locked/python-version/donhector/ansible-role-crossplatform?color=green
