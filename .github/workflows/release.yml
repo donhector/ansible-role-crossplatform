@@ -4,7 +4,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*.*.*'
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,13 @@ jobs:
           --api-key ${{ secrets.GALAXY_API_KEY }}
           ${GITHUB_REPOSITORY%%/*} ${GITHUB_REPOSITORY#*/}
 
+      - name: Get the tag version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+
       - name: Release to Gihub
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          name: Release ${{ steps.get_version.outputs.VERSION }}
           generate_release_notes: true
