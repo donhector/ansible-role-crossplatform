@@ -67,13 +67,7 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
 
-  automerge:
-    name: Merge PR
-    needs: molecule
-    runs-on: ubuntu-latest
-    if: github.base_ref == 'main'
-    steps:
-      - name: Merge
+      - name: Automerge PR
         run: >-
           gh pr merge --auto --squash --delete-branch ${{ github.event.pull_request.number }}
         env:
