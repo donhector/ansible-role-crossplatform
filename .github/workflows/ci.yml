@@ -5,7 +5,6 @@ on:
   pull_request:
     branches:
      - main
-     - master
   workflow_dispatch:
 
 jobs:
@@ -67,3 +66,15 @@ jobs:
           MOLECULE_DISTRO: "${{ matrix.distros }}"
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
+
+  automerge:
+    name: Merge PR
+    needs: molecule
+    runs-on: ubuntu-latest
+    if: github.base_ref == 'main'
+    steps:
+      - name: Merge
+        run: >-
+          gh pr merge --auto --squash --delete-branch ${{ github.event.pull_request.number }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
