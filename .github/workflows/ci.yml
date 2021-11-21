@@ -72,4 +72,4 @@ jobs:
         run: >-
           gh pr merge --auto --squash --delete-branch ${{ github.event.pull_request.number }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_REPO_FULL }}
