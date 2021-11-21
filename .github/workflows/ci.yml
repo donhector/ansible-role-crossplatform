@@ -61,6 +61,7 @@ jobs:
           pipenv install --deploy --dev
 
       - name: Molecule test [${{ matrix.distros }}]
+        # make test wraps 'molecule test --all' so it also does linting
         run: make test
         env:
           MOLECULE_DISTRO: "${{ matrix.distros }}"
