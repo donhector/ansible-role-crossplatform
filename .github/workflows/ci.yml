@@ -77,5 +77,4 @@ jobs:
           # If using the default ${{secrets.GITHUB_TOKEN}} merge works but branch is not deleted
           # had to use a Personal Access Token with full "repo" permissions
           # See https://github.com/cli/cli/issues/3884#issuecomment-868860269
-          #GITHUB_TOKEN: ${{ secrets.PAT_REPO_FULL }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_REPO_FULL }}
