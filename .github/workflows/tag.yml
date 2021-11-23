@@ -1,9 +1,12 @@
+---
 name: Tag
-on:
+
+on:  # yamllint disable-line rule:truthy
   push:
     branches:
       - main
   workflow_dispatch:
+
 jobs:
   tag:
     runs-on: ubuntu-latest
