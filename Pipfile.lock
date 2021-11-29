@@ -499,14 +499,6 @@
             "markers": "python_version >= '3.6'",
             "version": "==36.0.0"
         },
-        "decli": {
-            "hashes": [
-                "sha256:d3207bc02d0169bf6ed74ccca09ce62edca0eb25b0ebf8bf4ae3fb8333e15ca0",
-                "sha256:f2cde55034a75c819c630c7655a844c612f2598c42c21299160465df6ad463ad"
-            ],
-            "markers": "python_version >= '3.6'",
-            "version": "==0.5.2"
-        },
         "distlib": {
             "hashes": [
                 "sha256:c8b54e8454e5bf6237cc84c20e8264c3e991e824ef27e8f1e81049867d861e31",
@@ -686,10 +678,10 @@
         },
         "paramiko": {
             "hashes": [
-                "sha256:def3ec612399bab4e9f5eb66b0ae5983980db9dd9120d9e9c6ea3ff673865d1c",
-                "sha256:e673b10ee0f1c80d46182d3af7751d033d9b573dd7054d2d0aa46be186c3c1d2"
+                "sha256:7b5910f5815a00405af55da7abcc8a9e0d9657f57fcdd9a89894fdbba1c6b8a8",
+                "sha256:85b1245054e5d7592b9088cc6d08da22445417912d3a3e48138675c7a8616438"
             ],
-            "version": "==2.8.0"
+            "version": "==2.8.1"
         },
         "pathspec": {
             "hashes": [
@@ -861,7 +853,7 @@
                 "sha256:11516740a10dddead0c782dc11fdde552b19fd0614dbbba8f78ea7602d940720",
                 "sha256:3f7b0851e097ae90e43216375db413c2f910a0f310705614bce1a2ae43c8264e"
             ],
-            "markers": "python_version < '4' and python_full_version >= '3.6.2'",
+            "markers": "python_full_version >= '3.6.2' and python_full_version < '4.0.0'",
             "version": "==10.15.0"
         },
         "ruamel.yaml": {
