@@ -32,7 +32,7 @@ repos:
       # and the hook explictly installed with "pre-commit install --hook-type commit-msg"
       # it is not enough just installing it with "pre-commit install"
       - id: commitizen
-        stages: [prepare-commit-msg]
+        stages: [commit-msg]
 
   - repo: local
     hooks:

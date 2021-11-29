@@ -27,11 +27,8 @@ Example of a dummy cross-platform Ansible role. The purpose of this repo was to:
     - editorconfig
     - pre-commit checks
   - use of Makefile to provide a common interface to usual tasks such as 'lint', 'test' and hide complexity for end users.
-
-TODO:
-
-- Commit message standarization and enforcement (ie: conventional commit messages + commitizen/commitlint + pre-commit)
-- Automated changelog and semver generation based on commit messages (currently this repo uses the builtin release changelog from Github)
+  - Commit message standarization and enforcement (ie: conventional commits via commitizen and pre-commit validations)
+  - Automated changelog and semver generation based on conventional commits (currently this repo uses the builtin release changelog from Github)
 
 Requirements
 ------------
@@ -93,4 +90,3 @@ donhector
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-link]: http://commitizen.github.io/cz-cli
 
-PPPP
