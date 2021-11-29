@@ -1,0 +1,57 @@
+[tool.commitizen]
+name = "cz_customize"
+version = "1.3.0"
+tag_format = "v$version"
+bump_message = "bump: $current_version → $new_version"
+#update_changelog_on_bump = true
+annotated_tag = true
+
+[tool.commitizen.customize]
+message_template = "{{type}}{% if scope %}({{scope}}){% endif %}{% if is_breaking_change %}!{% endif %}: {{subject}}{% if body %}\n\n{{body}}{% endif %}{% if footer %}\n\n{{footer}}{% endif %}"
+example = "fix(api): correct minor typos in code\n\nsee the issue for details on the typos fixed\n\ncloses issue #12"
+schema = "<type>(<scope>): <subject>\n<BLANK LINE>\n<body>\n<BLANK LINE>\n(BREAKING CHANGE: )<footer>"
+schema_pattern = "^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|bump)(\\(\\w+((,|\\/|\\\\)?\\s?\\w+)+\\))?!?: [\\S ]{1,49}[^\\.]$"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "type"
+choices = [
+   {"value" = "fix",      "name" = "🐛 fix:      Bug fix (correlates with PATCH in SemVer)"},
+   {"value" = "feat",     "name" = "✨ feat:     New feature (correlates with MINOR in SemVer)"},
+   {"value" = "docs",     "name" = "📝 docs:     Changes to documentation"},
+   {"value" = "style",    "name" = "😎 style:    Changes that do not affect the meaning of the code (white-space, formatting, etc...)"},
+   {"value" = "refactor", "name" = "🔨 refactor: Changes that neither fixe a bug nor add a feature"},
+   {"value" = "perf",     "name" = "⚡ perf:     Changes that improve performance"},
+   {"value" = "test",     "name" = "🧪 test:     Adding or refactoring tests"},
+   {"value" = "build",    "name" = "👷 build:    Changes that affect the build system or external dependencies (example scopes: pip, make)"},
+   {"value" = "ci",       "name" = "🚀 ci:       Changes to CI config files and scripts (pipelines as code, GH actions, etc...)"},
+   {"value" = "chore",    "name" = "⚙️ chore:    Other changes that don't modify src or test files"},
+   {"value" = "revert",   "name" = "♻️ revert:   Reverts a previous commit"}
+]
+message = "[type] Select the type of change you are committing"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "scope"
+message = "[scope] What is the scope of this change? (hit [enter] to skip):"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "subject"
+message = "[subject] Short and imperative summary of the code changes (lower case and no period):"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "body"
+message = "[body] Provide additional contextual information about the code changes: (hit [enter] to skip)"
+
+[[tool.commitizen.customize.questions]]
+type = "confirm"
+name = "is_breaking_change"
+message = "[breaking] Is this a BREAKING CHANGE? Correlates with MAJOR in SemVer"
+default = false
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "footer"
+message = "[footer] Info about Breaking Changes and reference issues that this commit closes: (hit [enter] to skip)"
