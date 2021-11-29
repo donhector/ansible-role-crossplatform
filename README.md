@@ -19,7 +19,7 @@ Example of a dummy cross-platform Ansible role. The purpose of this repo was to:
 - Illustrate the use of some nice Github features:
   - Github Actions: To build a CI/CD pipelines for the role.
   - Bots: To manage vulnearble dependencies (ie. dependabot) and pull requests (ie. stale)
-  - Issue Templates: To standarize community
+  - Issue Templates: To standarize community raised issues/questions
 - Illustrate the use of good software developement practices:
   - Virtual environments with pipenv
   - enforcing coding standards:
@@ -89,4 +89,3 @@ donhector
 [python-badge]: https://img.shields.io/github/pipenv/locked/python-version/donhector/ansible-role-crossplatform?color=green
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-link]: http://commitizen.github.io/cz-cli
-
