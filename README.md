@@ -4,8 +4,10 @@ Ansible role: crossplatform
 [![Ansible Galaxy role badge][galaxy-role-badge]][galaxy-link]
 [![Ansible Galaxy quality badge][galaxy-quality-badge]][galaxy-link]
 [![CI badge][ci-badge]][ci-link]
-![Python version][python-badge]
 [![MIT licensed][mit-badge]][mit-link]
+![Python version][python-badge]
+[![pre-commit badge][pre-commit-badge]][pre-commit-link]
+[![Commitizen friendly][commitizen-badge]][commitizen-link]
 
 Description
 ------------
@@ -28,8 +30,8 @@ Example of a dummy cross-platform Ansible role. The purpose of this repo was to:
 
 TODO:
 
-- Commit message standarization and enforcement
-- Changelog generation
+- Commit message standarization and enforcement (ie: conventional commit messages + commitizen/commitlint + pre-commit)
+- Automated changelog and semver generation based on commit messages (currently this repo uses the builtin release changelog from Github)
 
 Requirements
 ------------
@@ -85,4 +87,10 @@ donhector
 [galaxy-link]: https://galaxy.ansible.com/donhector/crossplatform
 [ci-badge]: https://github.com/donhector/ansible-role-crossplatform/actions/workflows/ci.yml/badge.svg
 [ci-link]: https://github.com/donhector/ansible-role-crossplatform/actions/workflows/ci.yml
+[pre-commit-link]: https://github.com/pre-commit/pre-commit
+[pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [python-badge]: https://img.shields.io/github/pipenv/locked/python-version/donhector/ansible-role-crossplatform?color=green
+[commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-link]: http://commitizen.github.io/cz-cli
+
+PPPP

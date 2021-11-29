@@ -2,5 +2,6 @@
   "files.associations": {
       "*.yml": "ansible",
       "**/.github/**/*.yml": "yaml"
-  }
+  },
+  "python.pythonPath": "${workspaceFolder}/.venv/bin/python"
 }

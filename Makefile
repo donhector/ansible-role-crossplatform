@@ -12,7 +12,9 @@ install:
 	@command -v pipenv  2>&1 >/dev/null || pip3 install pipenv
 	@which pip3 | grep -q 'shim' && asdf reshim python || true
 	@pipenv install --dev
-	@[ -f .git/hooks/pre-commit ] || pipenv run pre-commit install
+	@[ -f .git/hooks/pre-commit ] || \
+		pipenv run pre-commit install && \
+		pre-commit install --hook-type commit-msg
 
 ## remove our pipenv environment
 clean:
