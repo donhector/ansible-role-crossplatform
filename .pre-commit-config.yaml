@@ -1,4 +1,14 @@
+default_stages: [commit, manual]
 repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.20.0
+    hooks:
+      # Requires that commitizen is already installed (see Pipfile)
+      # and the hook explictly installed with "pre-commit install --hook-type commit-msg"
+      # it is not enough just installing it with "pre-commit install"
+      - id: commitizen
+        stages: [prepare-commit-msg]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
     hooks:
@@ -23,15 +33,6 @@ repos:
     rev: 2.1.5
     hooks:
       - id: shellcheck
-
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.20.0
-    hooks:
-      # Requires that commitizen is already installed (see Pipfile)
-      # and the hook explictly installed with "pre-commit install --hook-type commit-msg"
-      # it is not enough just installing it with "pre-commit install"
-      - id: commitizen
-        stages: [commit-msg]
 
   - repo: local
     hooks:
