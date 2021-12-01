@@ -95,4 +95,4 @@ TODO
 ------------
 Research hook execution order: We want commitizen to run prior to molecule test
 Investigate why there was no release even with `fix:` commits
-Research semantic pull-requests, so titles follow conventional commits spec
+Research semantic pull-requests, so PR titles follow conventional commits spec
