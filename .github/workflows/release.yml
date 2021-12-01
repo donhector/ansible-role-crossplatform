@@ -12,7 +12,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   release:
-    name: Create Ansible Galaxy release
+    name: Release
     runs-on: ubuntu-latest
     steps:
 
@@ -22,19 +22,31 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
-      # Since this repo follows the conventional commit specification,
-      # we will use the 'semantic-release' toolset for automatic tagging/releasing
+      #############################
+      # Release to Github
+      #############################
+
+      # Since this repo follows the conventional commits specification,
+      # we can use the 'semantic-release' toolset for automatic tagging/releasing
       # Instead of setting up the runner with node, then npm install semantic-release
       # and friends, and then run it with npx, we opted for a handy github action.
-      # Configuration file used for 'semantic-release' is ''.releaserc.yml'
-      # NOTE: Since we are not interested in keeping a separate CHANGELOG file,
-      # we are not installing the 'changelog' and 'git' extra_plugins
+      # This gh action comes with some plugins pre-installed by default, but not
+      # the one that provided the 'conventionalcommits' preset. Since we are not
+      # interested in maintaining a dedicated CHANGELOG file in our repo, we won't
+      # be installing the additional and very popular 'changelog' and 'git' extra_plugins
+      # Configuration file for 'semantic-release' is '.releaserc.yml'
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
+        with:
+          extra_plugins: |
+            conventional-changelog-conventionalcommits
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      #############################
+      # Release to Ansible Galaxy
+      #############################
 
       - name: Set up Python 3.x
         uses: actions/setup-python@v2
