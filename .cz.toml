@@ -1,10 +1,5 @@
 [tool.commitizen]
 name = "cz_customize"
-#version = "1.3.0"
-#tag_format = "v$version"
-#bump_message = "bump: $current_version → $new_version"
-#update_changelog_on_bump = true
-#annotated_tag = true
 
 [tool.commitizen.customize]
 message_template = "{{type}}{% if scope %}({{scope}}){% endif %}{% if is_breaking_change %}!{% endif %}: {{subject}}{% if body %}\n\n{{body}}{% endif %}{% if footer %}\n\n{{footer}}{% endif %}"
