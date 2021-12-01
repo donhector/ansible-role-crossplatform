@@ -1,5 +1,5 @@
 ---
-name: Release
+name: CD
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -64,3 +64,13 @@ jobs:
           ansible-galaxy role import
           --api-key ${{ secrets.GALAXY_API_KEY }}
           ${GITHUB_REPOSITORY%%/*} ${GITHUB_REPOSITORY#*/}
+
+      # - name: Get the tag version
+      #   id: get_version
+      #   run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+
+      # - name: Release to Github
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     tag_name: ${{ steps.get_version.outputs.VERSION }}
+      #     generate_release_notes: true
