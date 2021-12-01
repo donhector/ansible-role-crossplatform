@@ -29,5 +29,6 @@ galaxy_info:
     - ubuntu
     - centos
     - windows
+    - donhector
 
 dependencies: []
