@@ -76,7 +76,7 @@ License
 Author Information
 ------------------
 
-donhector
+@donhector
 
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-link]: https://raw.githubusercontent.com/drew-kun/ansible-mpd/master/LICENSE
