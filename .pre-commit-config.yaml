@@ -42,4 +42,3 @@ repos:
         args: ['test']
         pass_filenames: false
         language: system
-        stages: [push]
