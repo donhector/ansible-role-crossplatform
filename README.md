@@ -90,3 +90,9 @@ Author Information
 [python-badge]: https://img.shields.io/github/pipenv/locked/python-version/donhector/ansible-role-crossplatform?color=green
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-link]: http://commitizen.github.io/cz-cli
+
+TODO
+------------
+Research hook execution order: We want commitizen to run prior to molecule test
+Investigate why there was no release even with `fix:` commits
+Research semantic pull-requests, so titles follow conventional commits spec
