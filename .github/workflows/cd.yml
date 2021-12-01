@@ -10,7 +10,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   release:
-    name: Create Ansible Galaxy release
+    name: Release
     runs-on: ubuntu-latest
     steps:
 

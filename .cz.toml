@@ -21,7 +21,7 @@ choices = [
    {"value" = "build",    "name" = "👷 build:    Changes that affect the build system or external dependencies (example scopes: pip, make)"},
    {"value" = "ci",       "name" = "🚀 ci:       Changes to CI config files and scripts (pipelines as code, GH actions, etc...)"},
    {"value" = "chore",    "name" = "⚙️ chore:    Other changes that don't modify src or test files"},
-   {"value" = "revert",   "name" = "♻️ revert:   Reverts a previous commit"}
+   {"value" = "revert",   "name" = "💩 revert:   Reverts a previous commit"}
 ]
 message = "[type] Select the type of change you are committing"
 
