@@ -15,7 +15,7 @@ preset: conventionalcommits
 plugins:
   # Analyze that commits conform to the preset specification
   - "@semantic-release/commit-analyzer"
-  # Generate release notes. These will be included in the Github release
+  # Generate release notes. These will be embedded in the Github release
   - "@semantic-release/release-notes-generator"
   # Create a release in Github
   - "@semantic-release/github"
