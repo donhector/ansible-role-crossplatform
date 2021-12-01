@@ -1,5 +1,5 @@
 ---
-name: Release
+name: CD
 
 on:  # yamllint disable-line rule:truthy
   push:
