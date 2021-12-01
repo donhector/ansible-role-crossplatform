@@ -28,8 +28,8 @@ Example of a dummy cross-platform Ansible role. The purpose of this repo was to:
     - editorconfig
     - pre-commit checks
   - use of Makefile to provide a common interface to usual tasks such as 'lint', 'test' and hide complexity for end users.
-  - Commit message standarization and enforcement (ie: conventional commits via commitizen and pre-commit validations)
-  - Semantic versioning and releasing (ie: conventional commits + `semantic-release`)
+  - Commit message standarization and enforcement (ie: conventional commits via commitizen + pre-commit validations)
+  - Semantic versioning and releasing (ie: `semantic-release`)
 
 Requirements
 ------------
