@@ -4,7 +4,11 @@ branches:
   - main
   - master
 
+# Print additional info
+debug: true
+
 # Use 'conventionalcommits' preset instead of the default 'angular'
+# this will passed down to all plugins
 preset: conventionalcommits
 
 # List of plugins to use.
@@ -58,24 +62,42 @@ plugins:
           - type: fix
             section: ':bug: Bug Fixes'
           - type: docs
-            section: ':memo: Docs'
+            section: ':eyes: Misc'
+          - type: chore
+            section: ':eyes: Misc'
           - type: perf
-            section: ':zap: Performance'
+            section: ':muscle: Improvements'
           - type: refactor
-            section: ':hammer: Refactor'
+            section: ':muscle: Improvements'
+          - type: style
+            section: ':muscle: Improvements'
+          - type: ci
+            section: ':robot: Automation'
+          - type: build
+            section: ':robot: Automation'
+          - type: test
+            section: ':robot: Automation'
           - type: revert
             section: ':poop: Revert'
-          - type: chore
-            section: ':eyes: Other Changes'
-            hidden: false
-          - type: ci
-            section: ':eyes: Other Changes'
-          - type: build
-            section: ':eyes: Other Changes'
-          - type: style
-            section: ':eyes: Other Changes'
-          - type: test
-            section: ':eyes: Other Changes'
+      writerOpts:
+        groupBy: type
+        # commitGroupsSort: title
+        commitGroupsSort:
+          - feat
+          - fix
+          - perf
+          - refactor
+          - style
+          - ci
+          - build
+          - test
+          - revert
+          - docs
+          - chore
+        commitsSort: header
+        # commitsSort:
+        #   - scope
+        #   - subject
       parserOpts:
         noteKeywords:
           - BREAKING CHANGE
