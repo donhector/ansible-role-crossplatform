@@ -1,0 +1,21 @@
+---
+# Branches from where releases can happen
+branches:
+  - main
+  - master
+
+# Use 'conventionalcommits' preset instead of the default 'angular'
+preset: conventionalcommits
+
+# List of plugins to use.
+# Since this project is an Ansible role we won't use the npm plugin.
+# Since I'm not insterested in having a dedicated CHANGELOG.md file,
+# I won't be using the 'changelog' plugin to create one nor the 'git'
+# plugin to commit the generated 'CHANGELOG.md' back to git
+plugins:
+  # Analyze that commits conform to the preset specification
+  - "@semantic-release/commit-analyzer"
+  # Generate release notes. These will be included in the Github release
+  - "@semantic-release/release-notes-generator"
+  # Create a release in Github
+  - "@semantic-release/github"

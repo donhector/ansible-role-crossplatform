@@ -1,26 +1,27 @@
 ---
-name: Tag
+# name: Tag
 
-on:  # yamllint disable-line rule:truthy
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+# on:  # yamllint disable-line rule:truthy
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
 
-jobs:
-  tag:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: '0'
+# jobs:
+#   tag:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#       with:
+#         fetch-depth: '0'
 
-    # The following actions calculates the next version based on the conventional commit messages
-    # Since a tag pushed with ${{ secrets.GITHUB_TOKEN }} won't have enough permissions
-    # to trigger other workflows (ie. release.yml), we have to use our own PAT
-    # See https://github.community/t/action-does-not-trigger-another-on-push-tag-action/17148/7
-    - name: Bump version and push tag
-      id: tag_version
-      uses: mathieudutour/github-tag-action@v6.0
-      with:
-        github_token: ${{ secrets.PAT_REPO_FULL }}
+#     # The following actions calculates the next version based on the conventional commit messages
+#     # and uses the calculated version to create and push a new tag. If pushing the tag needs to
+#     # trigger another github workflow, you must then use a Personal Access Token instead of the
+#     # default ${{ secrets.GITHUB_TOKEN }} since it lacks permissions to trigger other workflows
+#     # See https://github.community/t/action-does-not-trigger-another-on-push-tag-action/17148/7
+#     - name: Bump version and push tag
+#       id: tag_version
+#       uses: mathieudutour/github-tag-action@v6.0
+#       with:
+#         github_token: ${{ secrets.PAT_REPO_FULL }}
