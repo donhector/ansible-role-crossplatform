@@ -34,11 +34,11 @@ repos:
       - id: commitizen
         stages: [commit-msg]
 
-  - repo: local
-    hooks:
-      - id: test
-        name: Test
-        entry: make
-        args: ['test']
-        pass_filenames: false
-        language: system
+  # - repo: local
+  #   hooks:
+  #     - id: test
+  #       name: Test
+  #       entry: make
+  #       args: ['test']
+  #       pass_filenames: false
+  #       language: system
