@@ -1,5 +1,5 @@
 ---
-name: CD
+name: 🚀 CD
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -27,18 +27,19 @@ jobs:
       # Since this repo follows the conventional commits specification,
       # we can use the 'semantic-release' toolset for automatic tagging/releasing
       # Instead of setting up the runner with node, then npm install semantic-release
-      # and friends, and then run it with npx, we opted for a handy github action.
+      # and friends, then run it with npx, etc... we opted for a handy github action.
       # This gh action comes with some plugins pre-installed by default, but not
-      # the one that provided the 'conventionalcommits' preset. Since we are not
-      # interested in maintaining a dedicated CHANGELOG file in our repo, we won't
-      # be installing the additional and very popular 'changelog' and 'git' extra_plugins
-      # Configuration file for 'semantic-release' is '.releaserc.yml'
-
+      # the one that provides the 'conventionalcommits' preset. Additionally, it does not
+      # come with the plugins for creating a changelog and commiting it inot the repo.
+      # Therefore we need to install those 3 extra plugins.
+      # NOTE: The configuration file for 'semantic-release' is '.releaserc.yml'
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
         with:
           extra_plugins: |
             conventional-changelog-conventionalcommits
+            @semantic-release/changelog
+            @semantic-release/git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
