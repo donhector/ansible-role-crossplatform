@@ -20,14 +20,15 @@ repos:
       - id: no-commit-to-branch
         args: ['--branch', 'master', '--branch', 'main']
 
-  # NOTE: While commitizen provides "cz check" for validating commits against its 'schema_pattern' regex
-  # it won't give you any detailed info on what exactly caused the validation to fail. It is for
-  # that reason the prefer to use 'gitlint' instead of 'cz check' for commit message validation
-  #
-  # Requires that 'gitlint' is already installed (see Pipfile)
+  # Below hook Requires that 'gitlint' is already installed (see Pipfile)
   # gitlint config file is .gitlint
   # Requires explicit installation with 'pre-commit install --hook-type commit-msg'
   # Refer to pre-commit documentation
+  # NOTE: While commitizen on Python provides "cz check" for validating commits
+  # against the customized 'schema_pattern' regex in .cz.toml, it won't give you
+  # any detailed info on what exactly caused the validation to fail. This is not
+  # very user friendly, and is the reason why I prefer to resort to 'gitlint' for
+  # commmit message validation and use 'commitizen' just for commit message prompting.
   - repo: https://github.com/jorisroovers/gitlint
     rev:  v0.17.0
     hooks:
