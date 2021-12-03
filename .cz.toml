@@ -49,4 +49,4 @@ default = false
 [[tool.commitizen.customize.questions]]
 type = "input"
 name = "footer"
-message = "[footer] (optional) Info about Breaking Changes and reference issues that this commit closes ([enter] to skip):"
+message = "[footer] Info about Breaking Changes and reference issues that this commit closes ([enter] to skip):"
