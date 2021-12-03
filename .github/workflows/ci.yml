@@ -1,5 +1,5 @@
 ---
-name: CI
+name: 📦 CI
 
 on:  # yamllint disable-line rule:truthy
   pull_request:
@@ -70,11 +70,11 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
 
-      # - name: Automerge PR
-      #   run: >-
-      #     gh pr merge --auto --squash --delete-branch ${{ github.event.pull_request.number }}
-      #   env:
-      #     # If using the default ${{secrets.GITHUB_TOKEN}} merge works but branch is not deleted
-      #     # had to use a Personal Access Token with full "repo" permissions
-      #     # See https://github.com/cli/cli/issues/3884#issuecomment-868860269
-      #     GITHUB_TOKEN: ${{ secrets.PAT_REPO_FULL }}
+      - name: Automerge PR
+        run: >-
+          gh pr merge --auto --merge --delete-branch ${{ github.event.pull_request.number }}
+        env:
+          # If using the default ${{secrets.GITHUB_TOKEN}} merge works but branch is not deleted
+          # had to use a Personal Access Token with full "repo" permissions
+          # See https://github.com/cli/cli/issues/3884#issuecomment-868860269
+          GITHUB_TOKEN: ${{ secrets.PAT_REPO_FULL }}

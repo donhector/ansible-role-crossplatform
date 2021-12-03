@@ -100,6 +100,23 @@ plugins:
           - BREAKING CHANGES
           - BREAKING
 
+  # Generate us a changelog file
+  - - "@semantic-release/changelog"
+    - changelogFile: CHANGELOG.md
+
+  # Commit the generated changelog file into our git repo.
+  # Since we are enforcing conventional commmits in our project,
+  # we ensure the commit message also follows the specification.
+  # Additionally, to prevent this commit from triggering a new release workflow
+  # (ie. infinite release loop), we use the '[skip ci]' text,
+  # so our release workflow logic can easily filter out / ignore these kind of commits.
+  # In fact, since recently, Github workflows knows how to handle this logic automatically
+  # See (https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/)
+  - - "@semantic-release/git"
+    - assets:
+        - CHANGELOG.md
+      message: "chore(release): update changelog to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+
   # Create a release in Github
   - - "@semantic-release/github"
     - assets:

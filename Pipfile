@@ -9,6 +9,7 @@ ansible-lint = "*"
 yamllint = "*"
 pre-commit = "*"
 commitizen = "*"
+gitlint = "*"
 
 [packages]
 ansible = "*"
