@@ -8,7 +8,8 @@ Ansible role: crossplatform
 ![Python version][python-badge]
 [![pre-commit badge][pre-commit-badge]][pre-commit-link]
 [![semantic-release](https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
-[![Commitizen friendly][commitizen-badge]][commitizen-link]
+[![commitizen friendly][commitizen-badge]][commitizen-link]
+[![gitlint enabled](https://img.shields.io/badge/gitlint-enabled-orange)](https://github.com/jorisroovers/gitlint)
 
 Description
 ------------
@@ -90,11 +91,3 @@ Author Information
 [python-badge]: https://img.shields.io/github/pipenv/locked/python-version/donhector/ansible-role-crossplatform?color=green
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-link]: http://commitizen.github.io/cz-cli
-
-<!-- TODO
-------------
-Research hook execution order: We want commitizen to run prior to molecule test
-Investigate why there was no release even with `fix:` commits
-- Looks like squash merging a PR, creates a commit with the name of the PR
-  so if the PR is not named conventiaolly, semantic-release will ignore it for comuputing the release
-Research semantic pull-requests, so PR titles follow conventional commits spec -->
