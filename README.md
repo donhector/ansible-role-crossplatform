@@ -91,10 +91,10 @@ Author Information
 [commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-link]: http://commitizen.github.io/cz-cli
 
-TODO
+<!-- TODO
 ------------
 Research hook execution order: We want commitizen to run prior to molecule test
 Investigate why there was no release even with `fix:` commits
 - Looks like squash merging a PR, creates a commit with the name of the PR
   so if the PR is not named conventiaolly, semantic-release will ignore it for comuputing the release
-Research semantic pull-requests, so PR titles follow conventional commits spec
+Research semantic pull-requests, so PR titles follow conventional commits spec -->
