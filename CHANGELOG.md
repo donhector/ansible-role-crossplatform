@@ -1,3 +1,10 @@
+### [1.11.1](https://github.com/donhector/ansible-role-crossplatform/compare/v1.11.0...v1.11.1) (2021-12-03)
+
+
+### :eyes: Misc
+
+* **readme:** update readme with gitlint badge ([ae4e54b](https://github.com/donhector/ansible-role-crossplatform/commit/ae4e54b742aaaf854ca944729d7baa0f072d2d50))
+
 ## [1.11.0](https://github.com/donhector/ansible-role-crossplatform/compare/v1.10.0...v1.11.0) (2021-12-03)
 
 
