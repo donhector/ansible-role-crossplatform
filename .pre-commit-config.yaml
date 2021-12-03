@@ -20,25 +20,24 @@ repos:
       - id: no-commit-to-branch
         args: ['--branch', 'master', '--branch', 'main']
 
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.5
+  # NOTE: While commitizen provides "cz check" for validating commits against its 'schema_pattern' regex
+  # it won't give you any detailed info on what exactly caused the validation to fail. It is for
+  # that reason the prefer to use 'gitlint' instead of 'cz check' for commit message validation
+  #
+  # Requires that 'gitlint' is already installed (see Pipfile)
+  # gitlint config file is .gitlint
+  # Requires explicit installation with 'pre-commit install --hook-type commit-msg'
+  # Refer to pre-commit documentation
+  - repo: https://github.com/jorisroovers/gitlint
+    rev:  v0.17.0
     hooks:
-      - id: shellcheck
+      - id: gitlint
 
-  - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.20.0
+  - repo: local
     hooks:
-      # Requires that commitizen is already installed (see Pipfile)
-      # and the hook explictly installed with "pre-commit install --hook-type commit-msg"
-      # it is not enough just installing it with "pre-commit install"
-      - id: commitizen
-        stages: [commit-msg]
-
-  # - repo: local
-  #   hooks:
-  #     - id: test
-  #       name: Test
-  #       entry: make
-  #       args: ['test']
-  #       pass_filenames: false
-  #       language: system
+      - id: test
+        name: Test
+        entry: make
+        args: ['test']
+        pass_filenames: false
+        language: system
