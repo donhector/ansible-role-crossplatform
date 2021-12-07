@@ -1,1 +1,6 @@
-github: donhector
+---
+github: 'donhector'
+custom: [
+  'https://paypal.me/donhector',
+  'https://venmo.com/donhector'
+]
