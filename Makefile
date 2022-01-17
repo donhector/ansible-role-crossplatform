@@ -43,9 +43,14 @@ security:
 	$(call hr)
 	@pipenv check
 
-## Run just the role
-run:
+## Converge the role
+converge:
 	$(call hr)
 	@pipenv run molecule converge
 
-.PHONY: all install lint test update clean security run
+## Run the role on localhost
+run:
+	$(call hr)
+	@ansible-playbook -v tests/test.yml -i tests/inventory
+
+.PHONY: all install lint test update clean security converge run
