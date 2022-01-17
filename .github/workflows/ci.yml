@@ -1,10 +1,10 @@
 ---
 name: 📦 CI
 
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   pull_request:
     branches:
-     - main
+      - main
   workflow_dispatch:
 
 jobs:
@@ -40,7 +40,7 @@ jobs:
       - name: Set up Python 3.
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
       - name: Install pipenv
         run: |
@@ -67,10 +67,12 @@ jobs:
         run: make test
         env:
           MOLECULE_DISTRO: "${{ matrix.distros }}"
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
+          PY_COLORS: "1"
+          ANSIBLE_FORCE_COLOR: "1"
 
       - name: Automerge PR
+        # run only when an PR was actually opened and not on manual runs with no PR present
+        if: github.event != 'workflow_dispatch'
         run: >-
           gh pr merge --auto --merge --delete-branch ${{ github.event.pull_request.number }}
         env:

@@ -4,9 +4,9 @@ dependency:
 driver:
   name: docker
 lint: |
-    set -e
-    yamllint .
-    ansible-lint
+  set -e
+  yamllint .
+  ansible-lint
 platforms:
   - name: instance
     image: ${MOLECULE_DISTRO:-ghcr.io/artis3n/docker-ubuntu2104-ansible:latest}

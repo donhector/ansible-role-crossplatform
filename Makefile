@@ -1,4 +1,5 @@
 export PIPENV_VENV_IN_PROJECT := true
+export ANSIBLE_ROLES_PATH := ${PWD}/..
 
 define hr
 	@printf '%.s─' $$(seq 1 $$(tput cols))
@@ -43,9 +44,22 @@ security:
 	$(call hr)
 	@pipenv check
 
-## Run just the role
-run:
+## Spin up a molecule instance
+create:
+	@pipenv run molecule create
+
+## Converge the role
+converge: create
 	$(call hr)
 	@pipenv run molecule converge
 
-.PHONY: all install lint test update clean security run
+## Destroy the instance
+destroy:
+	@pipenv run molecule destroy
+
+## Run the role on localhost
+run:
+	$(call hr)
+	@ansible-playbook -v tests/test.yml -i tests/inventory
+
+.PHONY: all install lint test update clean security converge destroy run
