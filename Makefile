@@ -7,9 +7,6 @@ endef
 
 all: install security test
 
-hector:
-	@env | sort
-
 install:
 	$(call hr)
 	@command -v python3 2>&1 >/dev/null || echo "Please install python3!"
