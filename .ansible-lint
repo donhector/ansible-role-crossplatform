@@ -1,11 +1,11 @@
 exclude_paths:
-    - .cache/
-    - .git/
-    - .github/
-    - .idea/
-    - .vscode/
-    - .venv/
+  - .cache/
+  - .git/
+  - .github/
+  - .idea/
+  - .vscode/
+  - .venv/
 
 skip_list:
-    - line-length
-    - package-latest
+  - line-length
+  - package-latest

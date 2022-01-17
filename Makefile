@@ -43,14 +43,22 @@ security:
 	$(call hr)
 	@pipenv check
 
+## Spin up a molecule instance
+create:
+	@pipenv run molecule create
+
 ## Converge the role
-converge:
+converge: create
 	$(call hr)
 	@pipenv run molecule converge
+
+## Destroy the instance
+destroy:
+	@pipenv run molecule destroy
 
 ## Run the role on localhost
 run:
 	$(call hr)
 	@ansible-playbook -v tests/test.yml -i tests/inventory
 
-.PHONY: all install lint test update clean security converge run
+.PHONY: all install lint test update clean security converge destroy run

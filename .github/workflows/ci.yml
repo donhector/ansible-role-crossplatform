@@ -71,6 +71,8 @@ jobs:
           ANSIBLE_FORCE_COLOR: "1"
 
       - name: Automerge PR
+        # run only when an PR was actually opened and not on manual runs with no PR present
+        if: github.event != 'workflow_dispatch'
         run: >-
           gh pr merge --auto --merge --delete-branch ${{ github.event.pull_request.number }}
         env:

@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - { role: ansible-role-crossplatform, become: true }
+    - { role: donhector.crossplatform, become: true }
