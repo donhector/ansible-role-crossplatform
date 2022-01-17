@@ -2,4 +2,5 @@
 - name: Test the role
   hosts: localhost
   roles:
-    - donhector.crossplatform
+    # - donhector.crossplatform
+    - ansible-role-crossplatform
