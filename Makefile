@@ -1,5 +1,5 @@
 export PIPENV_VENV_IN_PROJECT := true
-export ANSIBLE_ROLES_PATH := ${PWD}/..
+export ANSIBLE_ROLES_PATH := ${PWD}/../..
 
 define hr
 	@printf '%.s─' $$(seq 1 $$(tput cols))
