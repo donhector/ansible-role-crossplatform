@@ -668,11 +668,11 @@
                 "docker"
             ],
             "hashes": [
-                "sha256:b174c2974897791e1681723d16f3744700e071f6d1e3df9cf9a07d35c6df0552",
-                "sha256:c82af099e5c0998d7eb16a3bf65ed5a4edd97e3824fb938ce01bf064a46ce0ca"
+                "sha256:2efeeea8c0cdb6d987c9e6374725b99e745a669ff7489346e69ab7a62dc86448",
+                "sha256:2ff4134a6b5da276a3eac67eb5214bedeb3b62575d8f9131e22e8f3551a0e63a"
             ],
             "index": "pypi",
-            "version": "==3.5.2"
+            "version": "==3.6.0"
         },
         "molecule-docker": {
             "hashes": [
@@ -849,7 +849,7 @@
                 "sha256:600d3aefecce26d48d97eee936fdb66e4bc27f934c3ab6dd1e292c4f43946d90",
                 "sha256:fecfcc8cca110fda9d561cb83f1e97ecbb93c613ff857f655818839dac74ce90"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4.0'",
+            "markers": "python_version >= '3.6' and python_full_version < '4.0.0'",
             "version": "==1.10.0"
         },
         "requests": {
@@ -865,7 +865,8 @@
                 "sha256:365ebcdbfb3aa8d4b0ed2490e0fbf7b886a39d14eb7ea5fb7aece950835e1eed",
                 "sha256:43e03d8eec12e21beaecc22c828a41c4247356414a12d5879834863d4ad53816"
             ],
-            "markers": "python_version < '4.0' and python_full_version >= '3.6.2'",
+
+            "markers": "python_full_version >= '3.6.2' and python_full_version < '4.0.0'",
             "version": "==11.1.0"
         },
         "ruamel.yaml": {
@@ -981,7 +982,7 @@
                 "sha256:5a83672c565f78f5fc8f1e44e5f2726446cc6b765113efd21d03e9331747d9ab",
                 "sha256:c1b0fc73abd4f1e77c29ea4061ca0f2e11cbfb77342e17df3d3fdd496fc3f899"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4.0'",
+            "markers": "python_version >= '3.6' and python_full_version < '4.0.0'",
             "version": "==0.9.0"
         },
         "typing-extensions": {
@@ -997,7 +998,7 @@
                 "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed",
                 "sha256:0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_version < '4.0'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4' and python_full_version < '4.0.0'",
             "version": "==1.26.8"
         },
         "virtualenv": {
