@@ -18,10 +18,10 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:2f0ecbd8a3232e520bf3e3bc23f40dda60b9ce7924ca194bd35f4de4027100fc"
+                "sha256:b8a76d737889c9bfd0e6b0f2276dcf8d836da667067a355776f3504d7a66d518"
             ],
             "index": "pypi",
-            "version": "==5.4.0"
+            "version": "==5.5.0"
         },
         "ansible-core": {
             "hashes": [
@@ -641,11 +641,10 @@
         },
         "paramiko": {
             "hashes": [
-                "sha256:443f4da23ec24e9a9c0ea54017829c282abdda1d57110bf229360775ccd27a31",
-                "sha256:f6cbd3e1204abfdbcd40b3ecbc9d32f04027cd3080fe666245e21e7540ccfc1b"
+                "sha256:ac6593479f2b47a9422eca076b22cff9f795495e6733a64723efc75dd8c92101",
+                "sha256:ddb1977853aef82804b35d72a0e597b244fa326c404c350bd00c5b01dbfee71a"
             ],
-            "index": "pypi",
-            "version": "==2.10.1"
+            "version": "==2.10.3"
         },
         "pathspec": {
             "hashes": [
