@@ -5,11 +5,8 @@ exclude_paths:
   - .idea/
   - .vscode/
   - .venv/
-
 skip_list:
   - line-length
   - package-latest
-
 warn_list:
   - fqcn-builtins
-
