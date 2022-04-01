@@ -11,5 +11,5 @@ skip_list:
   - package-latest
 
 warn_list:
-  - fqdn-builtins
+  - fqcn-builtins
 
