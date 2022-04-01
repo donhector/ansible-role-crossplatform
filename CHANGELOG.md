@@ -1,3 +1,31 @@
+### [1.11.3](https://github.com/donhector/ansible-role-crossplatform/compare/v1.11.2...v1.11.3) (2022-03-31)
+
+
+### :poop: Revert
+
+* Reverted back to using a PAT ([1fe3ed0](https://github.com/donhector/ansible-role-crossplatform/commit/1fe3ed0add8a6b6b618bbe6acbca3860e69f3289))
+
+
+### :robot: Automation
+
+* **deps:** bump actions/cache from 2.1.7 to 3.0.1 ([4901f08](https://github.com/donhector/ansible-role-crossplatform/commit/4901f08d32dda4a2bcdb4bceb32a4454795dbb19))
+* **deps:** bump actions/checkout from 2 to 3 ([8456142](https://github.com/donhector/ansible-role-crossplatform/commit/8456142c367c309152d93119fc879056b939320a))
+* **deps:** bump actions/setup-python from 2 to 3 ([5511dc7](https://github.com/donhector/ansible-role-crossplatform/commit/5511dc7a6fbd26f7d36e17ff8c841e3a7f6261c7))
+* **lock:** update lock ([7063b9a](https://github.com/donhector/ansible-role-crossplatform/commit/7063b9a6aef44b041fd4892a6f82b683a023cb60))
+* **actions:** conditional automerge ([9ca3b4e](https://github.com/donhector/ansible-role-crossplatform/commit/9ca3b4e68ae70152d511efb14fb25983afc1bd72))
+* **automerge:** Changed token and permissions ([fe398ac](https://github.com/donhector/ansible-role-crossplatform/commit/fe398ac5d22291f4b1ace907d1266cd6f3a5c696))
+* **deps-dev:** bump ansible-lint from 5.3.2 to 5.4.0 ([b6bde38](https://github.com/donhector/ansible-role-crossplatform/commit/b6bde3861ab9c4fb4603aefb57cad76559de42e1))
+* **deps-dev:** bump commitizen from 2.20.4 to 2.20.5 ([2cfde94](https://github.com/donhector/ansible-role-crossplatform/commit/2cfde948a5a544567cf131e68989d2c71781fce1))
+* **deps-dev:** bump commitizen from 2.20.5 to 2.21.0 ([475f7bf](https://github.com/donhector/ansible-role-crossplatform/commit/475f7bf1bdb675036bb19ca8b94ad49a4fb90f90))
+* **deps-dev:** bump commitizen from 2.21.0 to 2.21.2 ([ffe3718](https://github.com/donhector/ansible-role-crossplatform/commit/ffe371899b9102928f675c4381e247b23e822c58))
+* **deps-dev:** bump molecule from 3.5.2 to 3.6.0 ([66cbefb](https://github.com/donhector/ansible-role-crossplatform/commit/66cbefb2c7b3bf763b8eb356b257c7069068df67))
+* **deps-dev:** bump molecule from 3.6.0 to 3.6.1 ([4edcf3d](https://github.com/donhector/ansible-role-crossplatform/commit/4edcf3d7098fc7079a625b71472d08ca97d7a42f))
+* **deps-dev:** bump pre-commit from 2.16.0 to 2.17.0 ([3f0c8a2](https://github.com/donhector/ansible-role-crossplatform/commit/3f0c8a21ac353b00060e2fff574e7fb34c214e24))
+* **deps:** bump ansible from 5.2.0 to 5.3.0 ([328abab](https://github.com/donhector/ansible-role-crossplatform/commit/328ababa969cea1262a5b1296b2852875df1bce6))
+* **deps:** bump ansible from 5.3.0 to 5.4.0 ([2d3e85a](https://github.com/donhector/ansible-role-crossplatform/commit/2d3e85a106583d50d005c404c73a2728f3953c33))
+* **deps:** bump ansible from 5.4.0 to 5.5.0 ([5e8bcd1](https://github.com/donhector/ansible-role-crossplatform/commit/5e8bcd1ab8a7dedf1596f6e2cebf3b9a3bbbb0ff))
+* **deps:** bump paramiko from 2.9.2 to 2.10.1 ([71aab2c](https://github.com/donhector/ansible-role-crossplatform/commit/71aab2ca79d7d5b48b69261a61453855d96224be))
+
 ### [1.11.2](https://github.com/donhector/ansible-role-crossplatform/compare/v1.11.1...v1.11.2) (2022-01-17)
 
 
