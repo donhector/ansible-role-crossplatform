@@ -421,11 +421,11 @@
         },
         "commitizen": {
             "hashes": [
-                "sha256:11497f3733f30f7a5408a9118e031bd53344c996d656550289a83fa3b6d511cc",
-                "sha256:5685d44ac235e3da0a02592e11c92aeebcf4864e059a6f5a59382207264fb671"
+                "sha256:046d512c5bc795cce625211434721946f21abf713f48753f2353ec1a3e114c3f",
+                "sha256:71a3e1fea37ced781bc440bd7d464abd5b797da8e762c1b9b632e007c2019b50"
             ],
             "index": "pypi",
-            "version": "==2.23.0"
+            "version": "==2.27.1"
         },
         "commonmark": {
             "hashes": [
