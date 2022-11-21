@@ -34,7 +34,7 @@ jobs:
       # Therefore we need to install those 3 extra plugins.
       # NOTE: The configuration file for 'semantic-release' is '.releaserc.yml'
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v3
         with:
           extra_plugins: |
             conventional-changelog-conventionalcommits
